@@ -1,0 +1,227 @@
+package com.Grisales;
+import java.util.ArrayList;
+public class CalculaterFunction {
+    public boolean negativeTest(int num) {
+        boolean n;
+        if (num % 2 == 1) {
+            n = true;
+        } else {
+            n = false;
+        }
+        return n;
+    }
+    public ArrayList<Integer> negativeSum(int num) {
+        int oddSum = 0;
+        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        for (int i = 0; i <= num; i++) {
+            if (negativeTest(i)) {  // this part isnt working need to validate top information
+                int x = oddSum + i;
+                list.add(x);
+            }
+        }
+        return list;
+    }
+    public ArrayList<Integer> possitiveSum(int num) {
+        int oddSum = 0;
+        ArrayList<Integer> list2 = new ArrayList<>();
+        for (int i = 1; i <= num; i++) {
+            if (negativeTest(i)) {  // this part isnt working need to validate top information
+            } else {
+                int x = oddSum + i;
+                list2.add(x);
+            }
+        }
+        return list2;
+    }
+    public ArrayList<Integer> TotalOfZero(int num) {
+        int sum = 0;
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i <= num; i++) {
+            int x = i % 10;
+            if (x == 0) {
+                list.add(x);
+            }
+        }
+        return list;
+    }
+    public ArrayList<Integer> totalPrime(int num) {
+        int primeSum = 0;
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 2; i <= num / 2; i++) {
+            if (i % 2 != 0) {
+                int x = primeSum + i;
+                list.add(x);
+            }
+        }
+        return list;
+    }
+    /**
+     * Determines if a given number is prime.
+     *
+     * @param num the number to be analyzed
+     * @return true if the number is prime, false otherwise
+     */
+    public boolean primeNumber(int num) {
+        int divisores = 0;
+        for (int i = 1; i <= num; i++) {
+            if (num % i == 0) {
+                divisores++;
+            }
+        }
+        if (divisores <= 2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    /**
+     * xxxxx
+     *
+     * @param num
+     * @return
+     */
+    public ArrayList<Integer> getDivisors(int num) {
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 1; i <= num; i++) {
+            if (num % i == 0) {
+                list.add(i);
+            }
+        }
+        return list;
+    }
+    public String converter(String name) {
+        int conv = name.length();
+        if (conv > 10) {
+            char first = name.charAt(0);
+            char last = name.charAt(conv - 1);
+            String middle = Integer.toString(conv - 2);
+            String answer = "";
+            answer = answer + first;
+            answer = answer + middle;
+            answer = answer + last;
+            return answer;
+        } else {
+            return name;
+        }
+    }
+    //obtaining number of digits
+    public int numberOfDigits(int num) {
+        int sum = 0;
+        while (num != 0) {
+            sum++;
+            num /= 10;
+        }
+        return sum;
+    }
+    //addind the individual numbers
+    public int sumOfDigits(int num) {
+        int sum = 0;
+        while (num != 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        return sum;
+    }
+    //Factoring
+    public int factoring(int num) {
+        int suma = 1;
+        for (int i = 1; i <= num; i++) {
+            suma = suma * i;
+        }
+        return suma;
+    }
+    //repeating integer
+    public ArrayList<Integer> repeat(int num) {
+        int n = 6;
+        int suma = num;
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i <= n; i++) {
+            if (num == num) {
+                list.add(num);
+            }
+        }
+        return list;
+    }
+    //obtaining min int
+    public int minimalInt(ArrayList<Integer> num) {
+        int min = num.get(0);
+        for (int i = 1; i < num.size(); i++) {
+            if (num.get(i) < min) {
+                min = num.get(i);
+            }
+        }
+        return min;
+    }
+    public int minimalInt(int[] num) {
+        int min = num[0];
+        for (int i = 1; i < num.length; i++) {
+            if (num[i] < min) {
+                min = num[i];
+            }
+        }
+        return min;
+    }
+    //sort needed for bubble
+    public void swap(int arr[], int i, int j) {
+        int change = arr[i];
+        arr[i] = arr[j];
+        arr[j] = change;
+    }
+    // bubblesort
+    public void bubbleSort(int arr[]) {
+        boolean sorted = false;
+        while (!sorted) {
+            sorted = true;
+            for (int i = 0; i < arr.length - 1; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    swap(arr, i, i + 1);
+                    sorted = false;
+                }
+            }
+        }
+    }
+    public void swap(char arr[], int i, int j) {
+        char change = arr[i];
+        arr[i] = arr[j];
+        arr[j] = change;
+    }
+    /*
+        // sorting chart array
+        public void sortString(char[] name) {
+            boolean sorted = false;
+            while (!sorted) {
+                sorted = true;
+                for (int i = 0; i < name.length - 1; i++) {
+                    if (name[i] > name[i + 1]) {
+                        swap(name, i, i + 1);
+                        sorted = false;
+                    }
+                }
+            }
+        }
+    */
+    public void swap(String arr[], int i, int j) {
+        String change = arr[i];
+        arr[i] = arr[j];
+        arr[j] = change;
+    }
+    //sorting chart array from lowest to highest
+    public void sortStringArray(String[] name) {
+        boolean sorted = false;
+        while (!sorted) {
+            sorted = true;
+            for (int i = 0; i < name.length - 1; i++) {
+                if (name[i].compareTo(name[i + 1]) > 0) { // if(name[i] > name[i+1]) {
+                    swap(name, i, i + 1);
+                    sorted = false;
+                }
+            }
+        }
+    }
+/*
+    public ArrayList<String> sortingArrayString(ArrayList<String> name){
+        return name;
+    }
+*/
+}
