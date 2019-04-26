@@ -1,0 +1,96 @@
+package com.Grisales;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+public class Calculater {
+    public static void main(String[] args) {
+        Scanner n = new Scanner(System.in);
+        //System.out.println("What number do you want to calculate: ");
+        // int num = n.nextInt();
+        String name1 = "michaelgrisales";
+        CalculaterFunction mathFunction = new CalculaterFunction();
+        //ArrayList<Integer> odd = mathFunction.negativeSum(num);
+        //System.out.println("number of odd " + odd.size());
+/*
+        //sum
+        ArrayList<Integer> even = mathFunction.possitiveSum(num);
+        System.out.println("number of even " + even.size());
+        //Total of 0
+        ArrayList<Integer> zero = mathFunction.TotalOfZero(num);
+        System.out.println("total of zero " + zero.size());
+        //is it prime
+        boolean prime= mathFunction.primeNumber(num);
+        System.out.println("is it a prime "+ prime);
+        // total prime number
+        ArrayList<Integer> primeSum = mathFunction.totalPrime(num);
+        System.out.println("total of prime: " + primeSum);
+        //adding number between n
+        ArrayList<Integer> listOfDivisors = mathFunction.getDivisors(num);
+        System.out.println("list of divisors of " + num + ": " + listOfDivisors);
+        //String
+        String convert = mathFunction.converter(name);
+        System.out.println("String project: " + convert);
+        //total in number
+        int size = mathFunction.numberOfDigits(num);
+        System.out.println("leng: " + size);
+        // adding individual number
+        int indi = mathFunction.sumOfDigits(num);
+        System.out.println("individual num: " + indi);
+        //factoring
+        int fac=mathFunction.factoring(num);
+        System.out.println("factoring: " + fac);
+        //finding repeating integer
+        int re = 6;
+        /*int repeted=n.nextInt();
+        int list[]=new int[re];
+        int a=list.length;
+        for(int i=1;i<re;i++){
+            list[i]=n.nextInt();
+        }
+        System.out.println("total"+a);
+        int[] array = new int[re];
+       ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i < re; i++) {
+            int x = n.nextInt();
+            list.add(x);
+            array[i] = x;
+        }
+        System.out.println("test" + list);
+        // int reper=mathFunction.factoring(repeted);
+        // System.out.println("how many times did it repeat: " + reper);
+        //sorting int
+        int minimamInt1 = mathFunction.minimalInt(list);
+        int minimamInt2 = mathFunction.minimalInt(array);
+        System.out.println("lowest number: " + minimamInt1);
+        System.out.println("lowest number 1: " + minimamInt2);
+*/
+        //Array bubble= mathFunction.bubbleSort(array);
+        //System.out.println("bubble: " + bubble);
+        //CalculaterFunction.sortString(name);
+        //System.out.println("chart name " + name);
+        char[] array = name1.toCharArray();
+        // mathFunction.sortString(array);
+        String array1 = new String(array);
+        System.out.println();
+        System.out.println("char name organize " + array1);
+        String[] names2 = new String[3];
+        names2[0] = "chesse";
+        names2[1] = "mike";
+        names2[2] = "kite";
+        mathFunction.sortStringArray(names2);
+        /*
+        char name3=names2.length;
+        String name4=new String(names2);
+        */
+        //int name3 = Integer.parseInt(names2.toString());
+        //String name4=new String(names2);
+        //System.out.println("chart array " + name3);
+        String[]listing = new String[3];
+        listing[0]="monkey";
+        listing[1]="tribal";
+        listing[2]="life";
+        mathFunction.sortStringArray(listing);
+        ArrayList <String> miLista = new ArrayList<String>(Arrays.asList(listing));
+        System.out.println("testing " + miLista);
+    }
+}
